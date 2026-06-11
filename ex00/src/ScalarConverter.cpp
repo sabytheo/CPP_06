@@ -22,9 +22,9 @@ void ScalarConverter::convert(const std::string &str)
 	else
 	{
 		char *end;
-		double value = strtod(str.c_str(), &end);
-
-		if (str.c_str() == end || (*end != '\0' && *end != 'f'))
+		double value = std::strtod(str.c_str(), &end);
+		std::cout << end << std::endl;
+		if (str.c_str() == end || (*end != '\0' && *end != 'f') || (*end == 'f' && *(end + 1) != '\0'))
 		{
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: impossible" << std::endl;
@@ -32,7 +32,6 @@ void ScalarConverter::convert(const std::string &str)
 			std::cout << "double: impossible" << std::endl;
 			return;
 		}
-
 		if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
 			std::cout << "char: impossible" << std::endl;
 		else if (std::isprint(static_cast<int>(value)))
@@ -60,7 +59,7 @@ void ScalarConverter::convert(const std::string &str)
 		if (std::isnan(value))
 			std::cout << "double: nan" << std::endl;
 		else if (std::isinf(value))
-			std::cout << "double: " << (value > 0 ? "+inff" : "-inff") << std::endl;
+			std::cout << "double: " << (value > 0 ? "+inf" : "-inf") << std::endl;
 		else
 		{
 			std::cout << "double: " << value;

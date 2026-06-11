@@ -2,24 +2,23 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
-
-typedef __intptr_t uintptr_t;
+#include <stdint.h>
 
 class Serializer
 {
-	private:
+private:
+	Serializer();
+	Serializer(const Serializer &copy);
+	Serializer operator=(const Serializer &other);
 
-	public:
-		Serializer();
-		~Serializer();
-		struct Data
-		{
-			int *ptr;
-		};
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
+public:
+	struct Data
+	{
+		int *ptr;
+	};
+	static uintptr_t serialize(Data *ptr);
+	static Data *deserialize(uintptr_t raw);
+	~Serializer();
 };
-
-
 
 #endif
