@@ -18,7 +18,7 @@ int main() {
     std::cout << "Adress data  : " << deserializedData->ptr << " (Value: " << *deserializedData->ptr << ")" << std::endl;
     std::cout << "\n[Check]" << std::endl;
     if (deserializedData == &originalData) {
-        std::cout << "SUCCESS : the ptr deserialize is the same as the serialize." << std::endl;
+        std::cout << "Success : the ptr deserialize is the same." << std::endl;
     } else {
         std::cout << "Fail : Address were different !" << std::endl;
     }
