@@ -44,7 +44,8 @@ void identify(Base& p)
 {
 	try
 	{
-		A a = dynamic_cast<A&>(p);
+		A& a = dynamic_cast<A&>(p);
+		(void)a;
 		std::cout << "object referenced is type A" << std::endl;
 	}
 	catch(const std::exception& e)
@@ -53,7 +54,8 @@ void identify(Base& p)
 	}
 	try
 	{
-		B b = dynamic_cast<B&>(p);
+		B& b = dynamic_cast<B&>(p);
+		(void)b;
 		std::cout << "object referenced is type B" << std::endl;
 	}
 	catch(const std::exception& e)
@@ -62,7 +64,8 @@ void identify(Base& p)
 	}
 	try
 	{
-		C c = dynamic_cast<C&>(p);
+		C& c = dynamic_cast<C&>(p);
+		(void)c;
 		std::cout << "object referenced is type C" << std::endl;
 	}
 	catch(const std::exception& e)

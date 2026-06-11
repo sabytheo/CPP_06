@@ -23,7 +23,6 @@ void ScalarConverter::convert(const std::string &str)
 	{
 		char *end;
 		double value = std::strtod(str.c_str(), &end);
-		std::cout << end << std::endl;
 		if (str.c_str() == end || (*end != '\0' && *end != 'f') || (*end == 'f' && *(end + 1) != '\0'))
 		{
 			std::cout << "char: impossible" << std::endl;
