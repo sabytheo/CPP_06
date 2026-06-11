@@ -10,9 +10,8 @@ int main()
 
     std::srand(time(NULL));
     Base p;
-
     p.generate();
-    Base::identify(p);
+    identify(p);
 
     return 0;
 }
